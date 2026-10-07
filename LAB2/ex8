@@ -1,0 +1,56 @@
+nx = -2:1;
+x  = [1, -2, 3, 6];
+
+ny1 = -nx($:-1:1);
+y1  = x($:-1:1);
+
+figure(1);
+subplot(2, 1, 1);
+plot2d3(nx, x, style=2);
+plot2d3(nx, x, style=-10);
+xlabel('n'); ylabel('x(n)');
+title('Original Signal x(n)');
+xgrid(2);
+
+subplot(2, 1, 2);
+plot2d3(ny1, y1, style=2);
+plot2d3(ny1, y1, style=-10);
+xlabel('n'); ylabel('y1(n)');
+title('y1(n) = x(-n)');
+xgrid(2);
+
+ny2 = nx - 3;
+y2  = x;
+
+figure(2);
+subplot(2, 1, 1);
+plot2d3(nx, x, style=2);
+plot2d3(nx, x, style=-10);
+xlabel('n'); ylabel('x(n)');
+title('Original Signal x(n)');
+xgrid(2);
+
+subplot(2, 1, 2);
+plot2d3(ny2, y2, style=2);
+plot2d3(ny2, y2, style=-10);
+xlabel('n'); ylabel('y2(n)');
+title('y2(n) = x(n + 3)');
+xgrid(2);
+
+ny3 = -nx($:-1:1) - 2;
+y3  = 2 * x($:-1:1);
+
+figure(3);
+subplot(2, 1, 1);
+plot2d3(nx, x, style=2);
+plot2d3(nx, x, style=-10);
+xlabel('n'); ylabel('x(n)');
+title('Original Signal x(n)');
+xgrid(2);
+
+subplot(2, 1, 2);
+plot2d3(ny3, y3, style=2);
+plot2d3(ny3, y3, style=-10);
+xlabel('n'); ylabel('y3(n)');
+title('y3(n) = 2*x(-n - 2)');
+xgrid(2);
